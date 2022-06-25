@@ -1,19 +1,24 @@
 package ru.gb.education.jeeservlets.models;
 
+import java.text.DecimalFormat;
+
 public class Product {
   private final Integer id;
-  private final String name;
+  private final String title;
+  private final Double cost;
 
-  public Product(Integer id, String name) {
+  public Product(Integer id, String title, Double cost) {
     this.id = id;
-    this.name = name;
+    this.title = title;
+    this.cost = cost;
   }
 
   @Override
   public String toString() {
     return "Product{" +
         "id=" + id +
-        ", name='" + name + '\'' +
+        ", title='" + title + '\'' +
+        ", cost=" + DecimalFormat.getInstance().format(cost) +
         '}';
   }
 }
